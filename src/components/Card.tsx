@@ -1,11 +1,4 @@
-import {
-  Box,
-  Heading,
-  Text,
-  Image,
-  Skeleton,
-  SkeletonText,
-} from '@chakra-ui/react';
+import { Box, Heading, Text, Image, Skeleton, SkeletonText } from '@chakra-ui/react';
 import { useState } from 'react';
 
 interface Card {

@@ -62,9 +62,7 @@ describe('Home page', () => {
 
     wrapper = ({ children }): JSX.Element => (
       <ChakraProvider resetCSS theme={theme}>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
       </ChakraProvider>
     );
   });
@@ -74,9 +72,7 @@ describe('Home page', () => {
 
     render(<Home />, { wrapper });
 
-    expect(
-      screen.getByRole('heading', { name: 'Carregando aplicação...' })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Carregando aplicação...' })).toBeInTheDocument();
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
 
@@ -91,12 +87,8 @@ describe('Home page', () => {
 
     render(<Home />, { wrapper });
 
-    expect(
-      await screen.findByText('Infelizmente ocorreu um erro =(')
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'Clique aqui para tentar novamente' })
-    ).toBeInTheDocument();
+    expect(await screen.findByText('Infelizmente ocorreu um erro =(')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Clique aqui para tentar novamente' })).toBeInTheDocument();
   });
 
   it('should be able to render images list', async () => {
@@ -155,10 +147,7 @@ describe('Home page', () => {
     fireEvent.click(dogeImg);
 
     expect(await screen.findByText('Abrir original')).toBeInTheDocument();
-    expect(screen.getByText('Abrir original')).toHaveAttribute(
-      'href',
-      'LOAD_SUCCESS_SRC'
-    );
+    expect(screen.getByText('Abrir original')).toHaveAttribute('href', 'LOAD_SUCCESS_SRC');
   });
 
   it('should be able to load more images', async () => {
@@ -378,12 +367,8 @@ describe('Home page', () => {
     expect(screen.getByRole('img', { name: 'Vini' })).toBeInTheDocument();
 
     expect(await screen.findByText('Flying forever')).toBeInTheDocument();
-    expect(
-      screen.getByRole('heading', { name: 'Rocket League' })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('img', { name: 'Rocket League' })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Rocket League' })).toBeInTheDocument();
+    expect(screen.getByRole('img', { name: 'Rocket League' })).toBeInTheDocument();
 
     expect(loadMoreButton).not.toBeInTheDocument();
   });

@@ -15,17 +15,9 @@ interface InputProps extends ChakraInputProps {
   error?: FieldError;
 }
 
-const TextInputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { name, error = null, ...rest },
-  ref
-) => {
+const TextInputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ name, error = null, ...rest }, ref) => {
   return (
-    <FormControl
-      display="flex"
-      flexDirection="row"
-      alignItems="center"
-      isInvalid={!!error}
-    >
+    <FormControl display="flex" flexDirection="row" alignItems="center" isInvalid={!!error}>
       <ChakraInput
         aria-label={name}
         name={name}
