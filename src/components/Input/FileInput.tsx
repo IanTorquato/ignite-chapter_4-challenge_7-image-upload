@@ -16,6 +16,7 @@ import axios, { AxiosRequestConfig, CancelTokenSource } from 'axios';
 import { useState, SetStateAction, Dispatch, ForwardRefRenderFunction, forwardRef, useCallback, useEffect } from 'react';
 import { FieldError, FieldValues, UseFormSetError, UseFormTrigger } from 'react-hook-form';
 import { FiAlertCircle, FiPlus } from 'react-icons/fi';
+
 import { api } from '../../services/api';
 
 export interface FileInputProps {
@@ -129,6 +130,7 @@ const FileInputBase: ForwardRefRenderFunction<HTMLInputElement, FileInputProps> 
                 <CircularProgress trackColor="pGray.200" value={progress} color="orange.500">
                   <CircularProgressLabel>{progress}%</CircularProgressLabel>
                 </CircularProgress>
+
                 <Text as="span" pt={2} textAlign="center">
                   Enviando...
                 </Text>
@@ -145,6 +147,7 @@ const FileInputBase: ForwardRefRenderFunction<HTMLInputElement, FileInputProps> 
 
                 <Flex h="full" alignItems="center" justifyContent="center" flexDir="column">
                   <Icon as={FiPlus} w={14} h={14} />
+
                   <Text as="span" pt={2} textAlign="center">
                     Adicione sua imagem
                   </Text>

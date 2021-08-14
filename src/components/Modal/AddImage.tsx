@@ -15,6 +15,7 @@ export function ModalAddImage({ isOpen, onClose }: ModalAddImageProps): JSX.Elem
   return (
     <Modal isOpen={isOpen} onClose={handleCloseModal} isCentered size="4xl">
       <ModalOverlay />
+
       <ModalContent bgColor="pGray.900">
         <ModalHeader fontSize="4xl">Nova imagem</ModalHeader>
 

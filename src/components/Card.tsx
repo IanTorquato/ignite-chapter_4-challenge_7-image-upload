@@ -36,11 +36,13 @@ export function Card({ data, viewImage }: CardProps): JSX.Element {
         {isLoading ? (
           <>
             <SkeletonText fontSize="2xl" mt={2} noOfLines={1} />
+
             <SkeletonText fontSize="md" mt={7} noOfLines={1} />
           </>
         ) : (
           <>
             <Heading fontSize="2xl">{data.title}</Heading>
+
             <Text mt={2.5} fontSize="md">
               {data.description}
             </Text>

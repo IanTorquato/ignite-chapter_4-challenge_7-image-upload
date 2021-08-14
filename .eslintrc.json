@@ -33,6 +33,11 @@
     "prettier"
   ],
   "rules": {
+    "semi": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
     "camelcase": "off",
     "import/no-duplicates": "off",
     "react/jsx-props-no-spreading": "off",

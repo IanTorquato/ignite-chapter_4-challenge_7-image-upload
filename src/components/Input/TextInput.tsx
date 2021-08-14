@@ -25,12 +25,8 @@ const TextInputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({
         borderColor="transparent"
         bgColor="pGray.800"
         color="pGray.50"
-        _placeholder={{
-          color: 'pGray.200',
-        }}
-        _hover={{
-          borderColor: 'orange.400',
-        }}
+        _placeholder={{ color: 'pGray.200' }}
+        _hover={{ borderColor: 'orange.400' }}
         py={6}
         pr={8}
         {...rest}
